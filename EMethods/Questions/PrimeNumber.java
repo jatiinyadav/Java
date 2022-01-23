@@ -1,32 +1,26 @@
 package EMethods.Questions;
+
 import java.util.Scanner;
 
 public class PrimeNumber {
     public static void main(String[] args) {
-
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter a Number: ");
-        int number = input.nextInt();
-        prime(number);
+
+        System.out.print("Enter Number: ");
+        int n1 = input.nextInt();
+        System.out.println(ctoF(n1));
         input.close();
     }
 
-    static void prime(int number) {
+    static boolean ctoF(int n1) {
 
-        int count = 0;
-        
-        for (int i = 2; i <= number / 2; i++) {
-            if(number % i == 0){
-                System.out.println("Not A Prime Number");
-                count++;
+        int i = 0;
+        for (i = 2; i <= n1 / 2; i++) {
+            if (n1 % i == 0) {
+                System.out.println(i);
                 break;
             }
         }
-
-        if(count == 0){
-            System.out.println("A Prime Number");
-        }
-
+        return i > n1 / 2;
     }
-
 }

@@ -30,5 +30,6 @@ public class C2DArray {
         for(int[] result : array){
             System.out.println(Arrays.toString(result));
         }
+        
     }
 }

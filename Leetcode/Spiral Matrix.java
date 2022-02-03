@@ -1,8 +1,8 @@
-package Leetcode;
-// import java.util.ArrayList;
-// import java.util.List;
+// package Leetcode;
+// // import java.util.ArrayList;
+// // import java.util.List;
 
-// // https://leetcode.com/problems/spiral-matrix
+// // // https://leetcode.com/problems/spiral-matrix
 
 // class Solution {
 //     public List<Integer> spiralOrder(int[][] matrix) {
@@ -50,42 +50,5 @@ package Leetcode;
 //         }
 
 //         return ls;
-//     }
-// }
-
-
-// class Solution {
-//     public List<Integer> spiralOrder(int[][] matrix) {
-
-//         List<Integer> list = new ArrayList<>();
-
-//         int i = 0;
-//         int j = 0;
-
-//         for (i = 0; i < 1; i++) {
-//             for (j = 0; j < matrix[i].length - 1; j++) {
-//                 list.add(matrix[i][j]);
-//             }
-//         }
-
-//         for (i = 0; i < matrix.length; i++) {
-//             for (j = matrix[i].length - 1; j < matrix[i].length; j++) {
-//                 list.add(matrix[i][j]);
-//             }
-//         }
-
-//         for (i = matrix.length - 1; i > 1; i--) {
-//             for (j = matrix[i].length - 2; j >= 0; j--) {
-//                 list.add(matrix[i][j]);
-//             }
-//         }
-
-//         for (i = matrix.length - 2; i < 2; i++) {
-//             for (j = 0; j < matrix[i].length - 1; j++) {
-//                 list.add(matrix[i][j]);
-//             }
-//         }
-
-//         return list;
 //     }
 // }

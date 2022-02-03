@@ -2,6 +2,7 @@ package FArrays;
 // When you don't know how much the size of array will be we use ArrayList
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class DArrayList {
@@ -9,7 +10,7 @@ public class DArrayList {
 
         Scanner input = new Scanner(System.in);
 
-        ArrayList<Integer> list = new ArrayList<>(5);
+        List<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
             list.add(input.nextInt());

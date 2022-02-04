@@ -1,11 +1,28 @@
-class Solution {
-    public boolean canJump(int[] nums) {
-        int lastJump = nums.length - 1;
+public class Practice {
+    public static void main(String[] args) {
 
-        for (int i = nums.length - 1; i >= 0; i--) {
-            if (i + nums[i] >= lastJump)
-                lastJump = i;
+        int[] arr = { 1, 3, 5, 7, 9 };
+
+        int start = 0;
+        int end = arr.length - 1;
+
+        int target = 5;
+
+        while (start <= end) {
+
+            int mid = start + (end - start) / 2;
+
+            if (arr[mid] > target) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+
+            if (arr[mid] == target) {
+                System.out.println(mid);
+            }
+
         }
-        return lastJump == 0;
+
     }
 }

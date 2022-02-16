@@ -1,5 +1,6 @@
 package GSearch.BBinary;
 // Total Comparisons in the worst Case is (logN) where n is Size of the array
+// Time Complexity is logN
 
 public class Binary {
     public static void main(String[] args) {

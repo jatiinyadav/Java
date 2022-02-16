@@ -1,19 +1,18 @@
+package HSorting;
+
 import java.util.Arrays;
 
-// import java.util.Arrays;
+// Worst Case will be: O(n ^ 2)
+// Best Case will be: O(n) 
+// Why Insertion Sort: Works good with small Number of elements
 
-// The worst case will be O(n^2)
-// The best case will also be O(n^2)
-//  Because we are finding the greatest element in the array
-// It is not stable
-// Use case is: It perform well in small lists/arrays
-public class Practice {
+public class InsertionSort {
 
     public static void main(String[] args) {
 
         int[] arr = { 5, 3, 4, 1, 2 };
 
-        for (int i = 0; i <= arr.length - 2; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             sort(arr, 0, i + 1);
         }
 
@@ -35,4 +34,5 @@ public class Practice {
             }
         }
     }
+
 }

@@ -7,9 +7,9 @@ public class Practice {
         
         for(int i = 0; i <= nums.length - 1; i++){
             for(int j = i; j <= nums.length - 1; j++){
-                if(nums[i] == nums[j]){
+                // if(nums[i] == nums[j]){
                     count++;
-                }
+                // }
             }
         }
         

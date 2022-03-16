@@ -19,3 +19,28 @@
 //         return candidate;
 //     }
 // }
+
+// Using Brute Force Approach
+// class Solution {
+//     public int majorityElement(int[] nums) {
+        
+//         int count1 = 0;
+//         int count2 = 0;
+//         int candidate = nums[0];
+
+//         for (int i = 0; i <= nums.length - 1; i++) {
+//             count2 = 0;
+//             for (int j = i; j <= nums.length - 1; j++) {
+//                 if (nums[i] == nums[j]) {
+//                     count2++;
+//                 }
+//             }
+//             if (count1 <= count2) {
+//                 count1 = count2;
+//                 candidate = nums[i];
+//             }  
+//         }
+        
+//         return candidate;
+//     }
+// }

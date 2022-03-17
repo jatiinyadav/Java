@@ -7,7 +7,6 @@ import java.util.Arrays;
 // Why Insertion Sort: Works good with small Number of elements
 
 public class InsertionSort {
-
     public static void main(String[] args) {
 
         int[] arr = { 5, 3, 4, 1, 2 };
@@ -15,7 +14,6 @@ public class InsertionSort {
         for (int i = 0; i < arr.length - 1; i++) {
             sort(arr, 0, i + 1);
         }
-
         System.out.println(Arrays.toString(arr));
 
     }

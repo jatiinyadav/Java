@@ -1,25 +1,26 @@
+import java.util.Arrays;
+
 public class Practice {
     public static void main(String[] args) {
 
-        int[] nums = { 1, 1, 1, 1, 2, 2, 2 };
-        int count1 = 0;
-        int count2 = 0;
-        int candidate = nums[0];
+        int[] arr = { 2, 1, 5, 4, 3, 6 };
+        int start = 0;
+        int end = arr.length - 1;
 
-        for (int i = 0; i <= nums.length - 1; i++) {
-            count2 = 0;
-            for (int j = i; j <= nums.length - 1; j++) {
-                if (nums[i] == nums[j]) {
-                    count2++;
-                }
-            }
-            if (count1 < count2) {
-                count1 = count2;
-                candidate = nums[i];
+        while (start < end) {
+
+            int correct = arr[start] - 1;
+
+            if (arr[start] != arr[correct]) {
+                int temp = arr[start];
+                arr[start] = arr[correct];
+                arr[correct] = temp;
+            } else {
+                start++;
             }
         }
 
-        System.out.print(candidate);
+        System.out.println(Arrays.toString(arr));
 
     }
 }

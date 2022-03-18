@@ -1,26 +1,30 @@
-import java.util.Arrays;
-
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr = { 2, 1, 5, 4, 3, 6 };
+        String name = null;
+        System.out.println(check(name));
+    }
+
+    static String check(String name) {
+
+        if(name == null){
+            return "Not a Palindrone";
+        }
+
         int start = 0;
-        int end = arr.length - 1;
+        int end = name.length() - 1;
 
-        while (start < end) {
+        while (start <= end) {
 
-            int correct = arr[start] - 1;
-
-            if (arr[start] != arr[correct]) {
-                int temp = arr[start];
-                arr[start] = arr[correct];
-                arr[correct] = temp;
-            } else {
+            if (name.charAt(start) == name.charAt(end)) {
                 start++;
+                end--;
+            } else {
+                return "Not a Palindrone";
             }
         }
 
-        System.out.println(Arrays.toString(arr));
+        return "A Palindrone";
 
     }
 }

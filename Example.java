@@ -1,16 +1,31 @@
+// Practice Question, NOT ON LEETCODE
+
 public class Example {
     public static void main(String[] args) {
 
-        String str = "Geeks", nstr = "";
-        char ch;
+        int number = 40;
+        double ans = nrm(number);
+        System.out.printf("%.3f", ans);
 
-        System.out.print("Original word: ");
-        System.out.println("Geeks"); // Example word
-
-        for (int i = 0; i < str.length(); i++) {
-            ch = str.charAt(i); // extracts each character
-            nstr = ch + nstr; // adds each character in front of the existing string
-        }
-        System.out.println("Reversed word: " + nstr);
     }
+
+    static double nrm(int number) {
+
+        double n = number;
+        double ans = 0;
+
+        while(true){
+            ans = 0.5 * (n + (number/n));
+
+            if(Math.abs(ans - n) < 1){
+                break;
+            }
+
+            n = ans;
+        }
+
+        return ans;
+
+    }
+
 }

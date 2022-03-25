@@ -1,29 +1,23 @@
-import java.util.Arrays;
-
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr1 = { 1, 3, 5, 7 };
-        int[] arr2 = { 2, 4, 6, 8 };
-
-        int[] result = makepairs(arr1, arr2);
-        System.out.print(Arrays.toString(result));
+        int[] arr = { 1, 4, 2, 7, 9 };
+        int target = 19;
+        int ans = sortedArray(arr, target, 0);
+        System.out.println(ans);
     }
 
-    static int[] makepairs(int[] arr1, int[] arr2) {
+    static int sortedArray(int[] arr, int target, int start) {
 
-        int[] array = new int[arr1.length + arr2.length];
-
-        for (int i = 0; i <= arr1.length - 1;i++) {
-
-            array[i] = arr1[i];
-
-            for (int j = i+ 1; j <= i; j++){
-                array[j] = arr2[j];
-            }
+        if (start == arr.length - 1) {
+            return -1;
+        }
+        if (arr[start] == target) {
+            return start;
+        } else {
+            return sortedArray(arr, target, start + 1);
         }
 
-        return array;
     }
 
-}   
+}

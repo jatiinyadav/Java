@@ -7,7 +7,6 @@ public class MergeSort {
         int[] arr = { 1, 4, 3, 5, 2 };
         arr = mergeSort(arr);
         System.out.println(Arrays.toString(arr));
-
     }
 
     static int[] mergeSort(int[] arr) {
@@ -18,9 +17,12 @@ public class MergeSort {
 
         int mid = arr.length / 2;
 
+        // Original Array is not being modified by default it creates a new array and copies 
+        // elements of the original array
         int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
         int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
 
+        System.out.print(left);
         return merge(left, right);
     }
 

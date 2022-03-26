@@ -1,8 +1,10 @@
 package JRecursion.Questions.MergeSort;
 
+// Solved using creating nre array object using copyOfRange
+
 import java.util.Arrays;
 
-public class MergeSort {
+public class AMergeSort {
     public static void main(String[] args) {
         int[] arr = { 1, 4, 3, 5, 2 };
         arr = mergeSort(arr);
@@ -21,8 +23,7 @@ public class MergeSort {
         // elements of the original array
         int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
         int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
-
-        System.out.print(left);
+        
         return merge(left, right);
     }
 

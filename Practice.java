@@ -1,23 +1,21 @@
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr = { 1, 4, 2, 7, 9 };
-        int target = 19;
-        int ans = sortedArray(arr, target, 0);
+        int[] arr = { 1, 2, 3, 4 };
+        boolean ans = sortedArray(arr, 0);
         System.out.println(ans);
     }
 
-    static int sortedArray(int[] arr, int target, int start) {
-
-        if (start == arr.length - 1) {
-            return -1;
+    static boolean sortedArray(int[] arr, int start){
+        if(start == arr.length - 1){
+            return true;
         }
-        if (arr[start] == target) {
-            return start;
+
+        if(arr[start] == start + 1){
+            return sortedArray(arr, start + 1);
         } else {
-            return sortedArray(arr, target, start + 1);
+            return false;
         }
-
     }
 
 }

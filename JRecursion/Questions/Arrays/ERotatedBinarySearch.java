@@ -1,9 +1,11 @@
 package JRecursion.Questions.Arrays;
 
+// WRONG ANSWER
+
 public class ERotatedBinarySearch {
     public static void main(String[] args) {
-        int[] arr = { 1, 3, 5, 7, 2, 4, 8, 10 };
-        int target = 2;
+        int[] arr = { 1, 3, 5, 7, 2, 4, 8, 10, 11 };
+        int target = 3;
         int ans = binarySearch(arr, 0, arr.length - 1, target);
         System.out.print(ans);
     }

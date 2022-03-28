@@ -1,21 +1,18 @@
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr = { 1, 2, 3, 4 };
-        boolean ans = sortedArray(arr, 0);
-        System.out.println(ans);
+        pattern();
+
     }
 
-    static boolean sortedArray(int[] arr, int start){
-        if(start == arr.length - 1){
-            return true;
+    static void pattern(){
+
+        for (int i = 4; i > 0; i--){
+            for(int j = 0; j <= i - 1; j++ ){
+                System.out.print("* ");
+            }
+            System.out.println();
         }
 
-        if(arr[start] == start + 1){
-            return sortedArray(arr, start + 1);
-        } else {
-            return false;
-        }
     }
-
 }

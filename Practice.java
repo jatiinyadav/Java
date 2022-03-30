@@ -1,18 +1,22 @@
+import java.util.Arrays;
+
 public class Practice {
     public static void main(String[] args) {
 
-        pattern();
+        int number = 6;
+        int ans = factorial(number);
+        System.out.println(ans);
 
     }
 
-    static void pattern(){
+    static int factorial(int number) {
 
-        for (int i = 4; i > 0; i--){
-            for(int j = 0; j <= i - 1; j++ ){
-                System.out.print("* ");
-            }
-            System.out.println();
+        int ans = 1;
+        for(int i = number; i > 0; i--){
+            ans = i * ans;
         }
+
+        return ans;
 
     }
 }

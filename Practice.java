@@ -1,22 +1,32 @@
-import java.util.Arrays;
-
 public class Practice {
     public static void main(String[] args) {
 
-        int number = 6;
-        int ans = factorial(number);
+        int number = 10;
+        boolean ans = result(number);
         System.out.println(ans);
 
     }
 
-    static int factorial(int number) {
-
-        int ans = 1;
-        for(int i = number; i > 0; i--){
-            ans = i * ans;
+    static boolean result(int number){
+        if(number <= 9){
+            return true;
         }
-
-        return ans;
+        return number == palindrone(number);
 
     }
+
+    static int rev = 0;
+    static int palindrone(int number){
+
+
+        if(number == 0){
+            return 1;
+        }
+
+        int rem = number % 10;
+        rev = rev * 10 + rem;
+        palindrone(number / 10);
+        return rev;
+    }
+
 }

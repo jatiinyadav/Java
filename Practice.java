@@ -1,25 +1,18 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Practice {
     public static void main(String[] args) {
 
-        int number = 981;
-        prime(number);
-    }
-    
-    static ArrayList<Integer> list = new ArrayList<>();
-    static void prime(int number){
+        int[][] arr = { { -1, 3, 4 }, { 8, 4 }, { 8, 2 } };
 
-        list.add(1);
-        
-        for(int i = 2; i < number / 2; i++ ){
-            if(number % i == 0){
-                list.add(i);
+        for (int i = 0; i <= arr.length - 1; i++) {
+            System.out.print("[ ");
+            for (int j = 0; j <= arr[i].length - 1; j++) {
+                System.out.print(arr[i][j] + " ");
             }
+            System.out.print("]");
+            System.out.println();
         }
-        list.add(number);
-
-        System.out.println(list);         
 
     }
 

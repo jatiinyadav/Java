@@ -1,46 +1,27 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Practice {
     public static void main(String[] args) {
 
-        int[] candies = new int[] { 12, 1, 12 };
-        int max = maxNumber(candies);
-        ArrayList<Boolean> ans = runnningSum(candies, 10, max);
-        System.out.println(ans);
-    }
+        int[][] arr = new int[][] { { 1, 1, 0, 0 }, { 1, 0, 0, 1 }, { 0, 1, 1, 1 }, { 1, 0, 1, 0 } };
 
-    static int maxNumber(int[] candies) {
-        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int k = arr[i].length;
+            for (int j = 0; j <= k / 2 - 1; j++) {
 
-        for (int i = 0; i <= candies.length - 1; i++) {
-            if (candies[max] < candies[i]) {
-                max = i;
+                int temp = arr[i][j];
+                arr[i][j] = arr[i][k - i - 1];
+                arr[i][k - i - 1] = temp;
+
             }
         }
 
-        return max;
-    }
-
-    static ArrayList<Boolean> runnningSum(int[] candies, int extraCandies) {
-
-        ArrayList<Boolean> list = new ArrayList<>();
-
-        int max = 0;
-
-        for (int i = 0; i <= candies.length - 1; i++) {
-            if (candies[max] < candies[i]) {
-                max = i;
+        for (int i = 0; i <= arr.length - 1; i++) {
+            for (int j = 0; j <= arr[i].length - 1; j++) {
+                System.out.print(arr[i][j] + " ");
             }
+            System.out.println();
         }
-
-        for (int i = 0; i <= candies.length - 1; i++) {
-            if (candies[i] + extraCandies >= candies[max]) {
-                list.add(true);
-            } else {
-                list.add(false);
-            }
-        }
-
-        return list;
     }
 }

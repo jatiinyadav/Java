@@ -1,27 +1,33 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Practice {
     public static void main(String[] args) {
 
-        int[][] arr = new int[][] { { 1, 1, 0, 0 }, { 1, 0, 0, 1 }, { 0, 1, 1, 1 }, { 1, 0, 1, 0 } };
+        int[] arr = new int[] { 1, 1, 2, 3, 3, 4, 4, 8, 8 };
 
-        for (int i = 0; i < arr.length; i++) {
-            int k = arr[i].length;
-            for (int j = 0; j <= k / 2 - 1; j++) {
+        int ans = search(arr, 0, arr.length / 2);
 
-                int temp = arr[i][j];
-                arr[i][j] = arr[i][k - i - 1];
-                arr[i][k - i - 1] = temp;
+        if (ans == -1) {
+            ans = search(arr, arr.length / 2 + 1, arr.length);
+        }
+        System.out.println(ans);
+    }
 
+    static int search(int[] arr, int start, int end) {
+
+        int res = -1;
+
+        if (arr[end] != arr[end - 1] || arr[end] != arr[end + 1]) {
+            return arr[end];
+        }
+
+        for (int i = end; i >= 0; i-=2) {
+            if (arr[end] != arr[end - 1]) {
+                return arr[end];
             }
         }
 
-        for (int i = 0; i <= arr.length - 1; i++) {
-            for (int j = 0; j <= arr[i].length - 1; j++) {
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
+        return res;
+
     }
 }

@@ -2,7 +2,7 @@ package LeetcodeQuestions.Easy;
 
 import java.util.ArrayList;
 
-class Solution {
+class MTargetJava {
     public int[] createTargetArray(int[] nums, int[] index) {
 
         ArrayList<Integer> arr = new ArrayList<>();

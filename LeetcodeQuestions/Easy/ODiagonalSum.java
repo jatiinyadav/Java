@@ -2,7 +2,7 @@ package LeetcodeQuestions.Easy;
 
 // https://leetcode.com/problems/matrix-diagonal-sum/
 
-class Solution {
+public class ODiagonalSum {
     public int diagonalSum(int[][] arr) {
 
         int sum = 0;

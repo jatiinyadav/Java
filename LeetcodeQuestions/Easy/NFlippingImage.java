@@ -2,7 +2,7 @@ package LeetcodeQuestions.Easy;
 
 // https://leetcode.com/problems/flipping-an-image/
 
-class Solution {
+public class NFlippingImage{
     public int[][] flipAndInvertImage(int[][] arr) {
 
         for (int i = 0; i < arr.length; i++) {

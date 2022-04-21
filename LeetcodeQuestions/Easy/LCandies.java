@@ -3,7 +3,7 @@ package LeetcodeQuestions.Easy;
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+public class LCandies {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
 
         ArrayList<Boolean> ans = findingCandies(candies, extraCandies);

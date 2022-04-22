@@ -1,6 +1,8 @@
+package HSorting;
+
 import java.util.Arrays;
 
-public class Practice {
+public class ALL {
     public static void main(String[] args) {
 
         int[] arr = { 4, 3, 1, 6, 2, 5 };
@@ -62,6 +64,7 @@ public class Practice {
         }
     }
 
+    // MERGE SORT
     static int[] mergeSort(int[] arr) {
 
         if (arr.length == 1) {
@@ -111,6 +114,7 @@ public class Practice {
         return arr;
     }
 
+    // SELECTION SORT
     static void selectionSort(int[] arr) {
 
         int start = 0;
@@ -138,6 +142,7 @@ public class Practice {
         return max;
     }
 
+    // QUICK SORT
     static void quickSort(int[] arr, int left, int right) {
 
         if (left >= right) {

@@ -3,9 +3,7 @@ package JRecursion.Subset;
 public class Strings {
     public static void main(String[] args) {
 
-        String nam = "JatinaYadav";
-        String ans = "";
-        modify(nam, ans);
+        modify("JatinaYadav", "");
     }
 
     static void modify(String example, String ans) {

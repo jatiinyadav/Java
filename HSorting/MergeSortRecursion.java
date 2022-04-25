@@ -1,16 +1,17 @@
+package HSorting;
+
 import java.util.Arrays;
 
-public class Practice {
+public class MergeSortRecursion {
     public static void main(String[] args) {
+        int[] arr = { 4, 1, 6, 2, 3 };
 
-        int[] arr = { 4, 3, 1, 6, 2, 5 };
-
-        mergeSort(arr, 0, arr.length);
+        mergeSortRecursion(arr, 0, arr.length);
 
         System.out.println(Arrays.toString(arr));
     }
 
-    static void mergeSort(int[] arr, int start, int end) {
+    static void mergeSortRecursion(int[] arr, int start, int end) {
 
         if (end - start == 1) {
             return;
@@ -18,8 +19,8 @@ public class Practice {
 
         int mid = start + (end - start) / 2;
 
-        mergeSort(arr, start, mid);
-        mergeSort(arr, mid, end);
+        mergeSortRecursion(arr, start, mid);
+        mergeSortRecursion(arr, mid, end);
 
         merge(arr, start, mid, end);
 
@@ -41,20 +42,19 @@ public class Practice {
                 arra[k] = arr[j];
                 j++;
             }
-
             k++;
         }
 
         while (i < mid) {
             arra[k] = arr[i];
-            k++;
             i++;
+            k++;
         }
 
         while (j < end) {
             arra[k] = arr[j];
-            k++;
             j++;
+            k++;
         }
 
         for (int l = 0; l < arra.length; l++) {
@@ -62,5 +62,4 @@ public class Practice {
         }
 
     }
-
 }

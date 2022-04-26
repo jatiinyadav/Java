@@ -1,9 +1,9 @@
-package JRecursion.Subset;
+package JRecursion.Subsequence;
 
 public class Strings {
     public static void main(String[] args) {
 
-        modify("JatinaYadav", "");
+        modify("appJatappleinaYadav", "");
     }
 
     static void modify(String example, String ans) {
@@ -13,12 +13,10 @@ public class Strings {
             return;
         }
 
-        char ch = example.charAt(0);
-
-        if (ch == 'a') {
-            modify(example.substring(1), ans);
+        if (example.startsWith("apple")) {
+            modify(example.substring(5), ans);
         } else {
-            modify(example.substring(1), ans + ch);
+            modify(example.substring(1), ans += example.charAt(0));
 
         }
 

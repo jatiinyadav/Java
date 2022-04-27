@@ -15,7 +15,7 @@ public class Dice {
             ArrayList<String> list = new ArrayList<>();
             list.add(p);
             return list;
-        }
+        }  
 
         ArrayList<String> res = new ArrayList<>();
 

@@ -4,41 +4,38 @@ import java.util.Arrays;
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr = { 2, 0, 2, 1, 1, 0 };
-        product(arr);
+        int[] arr = { 3, 5, 1 };
+        System.out.println(product(arr, 5));
         System.out.println(Arrays.toString(arr));
     }
 
-    static void product(int[] arr) {
+    static int product(int[] nums, int target) {
 
-        int low = 0;
-        int mid = 0;
-        int high = arr.length - 1;
+        int start = 0;
+        int end = nums.length - 1;
 
-        while(mid <= high){
-
-            switch(arr[mid]){
-                case 0:
-                    int temp = arr[low];
-                    arr[low] = arr[mid];
-                    arr[mid] = temp;
-                    mid++;
-                    break;
-                
-                case 1:
-                    mid++;
-                    break;
-            
-                case 2: 
-                    int tem = arr[high];
-                    arr[high] = arr[mid];
-                    arr[mid] = tem;
-                    high--;
-                    break;    
+        while (start <= end) {
+            if (nums[start] == target) {
+                return start;
             }
 
+            else if (nums[end] == target) {
+                return end;
+            }
+
+            else if (nums[start] < target) {
+                start++;
+            }
+
+            else if (nums[end] > target) {
+                end--;
+            }
+
+            else {
+                break;
+            }
         }
 
+        return -1;
     }
-
 }

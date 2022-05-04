@@ -1,41 +1,37 @@
 import java.util.Arrays;
-// import java.util.ArrayList;
 
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr = { 3, 5, 1 };
-        System.out.println(product(arr, 5));
-        System.out.println(Arrays.toString(arr));
-    }
+        int[] arr = { 11, 15, 6, 8, 9, 10 };
+        int sum = 16;
 
-    static int product(int[] nums, int target) {
+        int[] ans = { -1, -1 };
 
-        int start = 0;
-        int end = nums.length - 1;
-
-        while (start <= end) {
-            if (nums[start] == target) {
-                return start;
-            }
-
-            else if (nums[end] == target) {
-                return end;
-            }
-
-            else if (nums[start] < target) {
-                start++;
-            }
-
-            else if (nums[end] > target) {
-                end--;
-            }
-
-            else {
+        int i;
+        for (i = 0; i < arr.length - 1; i++) { 
+            if (arr[i] > arr[i + 1]) {
                 break;
             }
         }
 
-        return -1;
+        int largest = i;
+        int smallest = (i + 1) % arr.length;
+
+        while (smallest != largest) {
+            if (arr[smallest] + arr[largest] == sum) {
+                ans[0] = smallest;
+                ans[1] = largest;
+            }
+
+            if (arr[smallest] + arr[largest] < sum) {
+                smallest = (smallest + 1) % arr.length;
+            } else {
+                largest = (arr.length + largest - 1) % arr.length ;
+            }
+
+        }
+
+        System.out.println(Arrays.toString(ans));
     }
 }

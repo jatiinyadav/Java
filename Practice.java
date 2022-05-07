@@ -3,35 +3,52 @@ import java.util.Arrays;
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr = { 11, 15, 6, 8, 9, 10 };
-        int sum = 16;
+        int[] nums = { 0, 1, 0, 3, 12 };
+        // int[] res = new int[nums.length];
 
-        int[] ans = { -1, -1 };
+        // int start = 0;
+        // int end = nums.length - 1;
+        // int i = 0;
 
-        int i;
-        for (i = 0; i < arr.length - 1; i++) { 
-            if (arr[i] > arr[i + 1]) {
-                break;
-            }
-        }
+        // while (start <= end) {
 
-        int largest = i;
-        int smallest = (i + 1) % arr.length;
+        // if (nums[start] != 0) {
+        // res[i] = nums[start];
+        // i++;
 
-        while (smallest != largest) {
-            if (arr[smallest] + arr[largest] == sum) {
-                ans[0] = smallest;
-                ans[1] = largest;
-            }
+        // }
 
-            if (arr[smallest] + arr[largest] < sum) {
-                smallest = (smallest + 1) % arr.length;
+        // start++;
+
+        // }
+
+        // for(int j = 0; j<= nums.length - 1; j++){
+        // nums[j] = res[j];
+        // }
+
+        // System.out.println(Arrays.toString(res));
+
+        int end = nums.length - 1;
+
+        int left = 0;
+        int right = 0;
+
+        while (right <= end) {
+
+            if (nums[right] == 0) {
+                right++;
             } else {
-                largest = (arr.length + largest - 1) % arr.length ;
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+
+                left++;
+                right++;
             }
 
         }
 
-        System.out.println(Arrays.toString(ans));
+        System.out.println(Arrays.toString(nums));
+
     }
 }

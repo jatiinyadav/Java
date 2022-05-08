@@ -1,14 +1,10 @@
-import java.util.Arrays;
-
-public class Practice {
-    public static void main(String[] args) {
-
-        String name = "a good   example";
+class Solution {
+    public String reverseWords(String s) {
 
         String res = "";
 
-        for (int i = name.length() - 1; i >= 0; i--) {
-            res += name.charAt(i);
+        for (int i = s.length() - 1; i >= 0; i--) {
+            res += s.charAt(i);
         }
 
         int j = 0;
@@ -24,11 +20,11 @@ public class Practice {
 
         }
 
-        System.out.print(ans.trim().replaceAll(" +", " "));
+        return ans;
 
     }
 
-    static String reverse(String res, int start, int end) {
+    public String reverse(String res, int start, int end) {
 
         String ans = "";
         for (int i = end; i >= start; i--) {
@@ -37,4 +33,5 @@ public class Practice {
 
         return ans;
     }
+
 }

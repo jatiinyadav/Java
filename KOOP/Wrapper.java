@@ -10,6 +10,7 @@ public class Wrapper {
 
         obj = new A("MY anae");
 
+        System.out.println(obj.name);
     }
 }
 

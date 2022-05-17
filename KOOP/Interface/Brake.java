@@ -6,5 +6,5 @@ public interface Brake {
         System.out.println("I am static brake");
     }
 
-    void stop();
+    void brake();
 }

@@ -1,4 +1,4 @@
-package KOOP.Genetics;
+package KOOP.Generics;
 
 // Comparable is an in built class used to Compare data
 // Comparable Class is an interface that's why compareTo is the function we have to use.

@@ -1,4 +1,4 @@
-package KOOP.Genetics;
+package KOOP.Generics;
 
 import java.util.Arrays;
 

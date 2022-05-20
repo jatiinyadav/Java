@@ -19,7 +19,7 @@ public class FrameworkEnumVector {
         // Internally is : public static final Week Mon = new Week;
 
         // enums type cannot extend another class
-        // enums can implement an Interface 
+        // enums can implement an Interface
     }
 
     public static void main(String[] args) {
@@ -35,8 +35,13 @@ public class FrameworkEnumVector {
         // List<Integer> list2 = new Vector<>();
 
         // VECTOR OBJECT
-        // In Vector Object more than threads cannot point to one Vector Object
+        // Multithreading is a Java feature that allows concurrent execution of two 
+        // or more parts of a program for maximum utilization of CPU. Each part of 
+        // such program is called a thread.
+        // In Vector Object more than one threads cannot point to one Vector Object,
         // Whereas in ArrayList one or more threads can access one ArrayList Object
+        // If one thread is accessing the object and another thread wants to access,
+        // the object then it will wait till thread one completes its process
         // Therefore ArrayList is more faster than Vector
 
         // ENUMERATIONS (ENUMS)

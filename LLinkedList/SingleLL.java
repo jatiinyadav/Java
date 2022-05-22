@@ -1,17 +1,17 @@
 package LLinkedList;
 
-public class SingleLinkedList {
+public class SingleLL {
 
     private Node head;
     private Node tail;
 
     private int size;
 
-    public SingleLinkedList() {
+    public SingleLL() {
         this.size = 0;
     }
 
-    public void insertBeg(int value) {
+    public void insertAtBeg(int value) {
         Node node = new Node(value);
         node.next = head;
         head = node;
@@ -20,14 +20,13 @@ public class SingleLinkedList {
             tail = head;
         }
 
-        size += 1;
-
+        size++;
     }
 
-    public void insertEnd(int value) {
+    public void insertAtEnd(int value) {
 
         if (tail == null) {
-            insertBeg(value);
+            insertAtBeg(value);
             return;
         }
 
@@ -40,12 +39,13 @@ public class SingleLinkedList {
 
     public void insertAtPos(int index, int value) {
         if (index == 0) {
-            insertBeg(value);
+            insertAtBeg(value);
             return;
         } else if (index == size) {
-            insertEnd(value);
+            insertAtEnd(value);
             return;
         } else {
+
             try {
                 Node temp = head;
 
@@ -63,58 +63,7 @@ public class SingleLinkedList {
         }
     }
 
-    public void deleteAtPos(int index) {
-
-        Node temp = head;
-
-        for (int i = 0; i < index - 2; i++) {
-            temp = temp.next;
-        }
-
-        temp.next = temp.next.next;
-
-        size--;
-    }
-
-    public void deleteAtBeg() {
-
-        head = head.next;
-        if (head == null) {
-            tail = null;
-        }
-
-        size--;
-    }
-
-    public void deleteAtEnd() {
-
-        Node temp = head;
-
-        for (int i = 1; i < size - 1; i++) {
-            temp = temp.next;
-        }
-
-        temp.next = null;
-        tail = temp;
-
-        size--;
-    }
-
-    public Node find(int value) {
-        Node temp = head;
-
-        while (temp != null) {
-            if (temp.value == value) {
-                return temp;
-            }
-            temp = temp.next;
-        }
-
-        return null;
-    }
-
     public void display() {
-
         Node temp = head;
 
         while (temp != null) {
@@ -122,7 +71,7 @@ public class SingleLinkedList {
             temp = temp.next;
         }
 
-        System.out.print("END");
+        System.out.println("END");
 
     }
 

@@ -1,31 +1,22 @@
 package LLinkedList;
 
+import LLinkedList.Leetcode.DuplicatesLinkendList;
+
 public class Main {
     public static void main(String[] args) {
+        DuplicatesLinkendList ll = new DuplicatesLinkendList();
 
-        SingleLinkedList list = new SingleLinkedList();
-        list.insertBeg(90);
-
-        list.insertEnd(87);
-
-        list.insertAtPos(0, 78);
-        list.display();
-
-        System.out.println();
-        
-        list.deleteAtPos(3);
-        list.display();
-        
-        System.out.println();
-        System.out.println(list.find(78));
-        // SingleLL list = new SingleLL();
-        // list.insertAtBeg(20);
-        // list.insertAtBeg(30);
-
-        // list.insertAtEnd(90);
-
-        // list.insertAtPos(20, 69);
-        // list.display();
-
+        ll.insertAtBeg(4);
+        ll.insertAtBeg(4);
+        ll.insertAtBeg(3);
+        ll.insertAtBeg(3);
+        ll.insertAtBeg(2);
+        ll.insertAtBeg(1);
+        ll.insertAtBeg(1);
+        ll.insertAtBeg(1);
+        ll.display();
+System.out.println();
+        ll.duplicates();
+        ll.display();
     }
 }

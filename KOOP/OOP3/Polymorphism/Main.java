@@ -53,7 +53,7 @@ public class Main {
         // All the static methods are inherited there is no point in overriding them in,
         // the child class because the static method in the parent class will always
         // run.
-        // In simple words static methods can be inherited but cannot be overridden.
+         // In simple words static methods can be inherited but cannot be overridden.
         // Overriding depends on objects, static doesn't depend on objects, hence static
         // methods cannot be overriden.
     }

@@ -1,5 +1,7 @@
 package KOOP.OOP2;
 
+// Packages, Static, Singleton, In-built methods
+
 public class Main {
 
     int age;
@@ -44,7 +46,7 @@ public class Main {
         // But static doesn't depend on objects
         // So to run our Java Program main method should be static
 
-        // In side a static method we cannot use a method or value that is not static
+        // Inside a static method we cannot use a method or value that is not static
         // If we want to use a non static method in static then we have create an object
 
         // We cannot use this keyword in static method

@@ -1,34 +1,55 @@
-public class Practice {
-    public static void main(String[] args) {
+import java.util.Arrays;
 
-        int[] nums = { -1, 0, 3, 5, 9, 12 };
-        int target = 12;
-        int ans = binarySearch(nums, 0, nums.length - 1, target);
-        System.out.println(ans);
+public class Practice<T> {
+
+    private Object[] list;
+    private int DEFAULT_SIZE = 5;
+    public int size;
+
+    public Practice() {
+        list = new Object[DEFAULT_SIZE];
+    }
+
+    public void add(T num) {
+
+        if (size == list.length) {
+            resize();
+        }
+
+        list[size++] = num;
 
     }
 
-    static int binarySearch(int[] nums, int start, int end, int target) {
+    public T remove() {
+        T rem = ((T) list[--size]);
+        return rem;
+    }
 
-        if(start == end && nums[start] == target){
-            return start;
+    public void resize() {
+        Object[] arr = new Object[size * 2];
+
+        for (int i = 0; i < list.length; i++) {
+            arr[i] = list[i];
         }
 
-        if (start > end) {
-            return -1;
-        }
+        list = arr;
+    }
 
-        int mid = start + (end - start) / 2;
-        if (nums[mid] == target) {
-            return mid;
-        }
+    public String toString() {
+        return Arrays.toString(list);
+    }
 
-        if (nums[mid] < target) {
-            return binarySearch(nums, mid + 1, end, target);
-        } else {
-            return binarySearch(nums, start, mid - 1, target);
-        }
+    public static void main(String[] args) {
 
+        Practice<String> ll = new Practice<>();
+        ll.add("Hello");
+        ll.add("I");
+        ll.add("am");
+        ll.add("Jatin");
+        ll.add("Yadav");
+
+        System.out.println(ll);
+        
     }
 
 }

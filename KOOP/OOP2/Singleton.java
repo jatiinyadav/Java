@@ -1,7 +1,8 @@
 package KOOP.OOP2;
 
 public class Singleton {
-    // If we want only object to be created on class, this is know as SingletonClass
+    // If we want only one object to be created of a class, this is know as
+    // SingletonClass
 
     Singleton() {
 

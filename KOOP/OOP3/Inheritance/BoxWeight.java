@@ -3,16 +3,6 @@ package KOOP.OOP3.Inheritance;
 public class BoxWeight extends Box {
 
     int weight;
-    int l;
-    int w;
-    int h;
-
-
-    BoxWeight(int l, int w, int h) {
-        this.l = l;
-        this.w = w;
-        this.h = h;
-    }
 
     BoxWeight(int l, int w, int h, int weight) {
 

@@ -1,22 +1,24 @@
 package LLinkedList;
 
-import LLinkedList.Leetcode.DuplicatesLinkendList;
+import LLinkedList.Leetcode.MergeLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        DuplicatesLinkendList ll = new DuplicatesLinkendList();
 
-        ll.insertAtBeg(4);
-        ll.insertAtBeg(4);
-        ll.insertAtBeg(3);
-        ll.insertAtBeg(3);
-        ll.insertAtBeg(2);
-        ll.insertAtBeg(1);
-        ll.insertAtBeg(1);
-        ll.insertAtBeg(1);
+        MergeLinkedList first = new MergeLinkedList();
+        MergeLinkedList second = new MergeLinkedList();
+
+        first.insertEnd(1);
+        first.insertEnd(3);
+        first.insertEnd(5);
+
+        second.insertEnd(1);
+        second.insertEnd(2);
+        second.insertEnd(9);
+        second.insertEnd(14);
+
+        MergeLinkedList ll = MergeLinkedList.merge(first, second);
         ll.display();
-System.out.println();
-        ll.duplicates();
-        ll.display();
+
     }
 }

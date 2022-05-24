@@ -1,13 +1,13 @@
 package LLinkedList.Leetcode;
 
-public class DuplicatesLinkendList {
+public class DuplicatesLinkedList {
 
     private Node head;
     private Node tail;
 
     private int size;
 
-    public DuplicatesLinkendList() {
+    public DuplicatesLinkedList() {
         this.size = 0;
     }
 

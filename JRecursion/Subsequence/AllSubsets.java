@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class AllSubsets {
     public static void main(String[] args) {
 
-        // ArrayList<String> ans = subsetsReturn("abc", "");
+        // ArrayList<String> ans  = subsetsReturn("abc", "");
         subsets("abc", "");
         // System.out.println(ans);
 
     }
 
     static void subsets(String example, String ans) {
-        if (example.isEmpty()) {
+         if (example.isEmpty()) {
             System.out.print(ans + " ");
             return;
         }

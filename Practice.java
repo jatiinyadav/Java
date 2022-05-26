@@ -1,55 +1,69 @@
-import java.util.Arrays;
-
-public class Practice<T> {
-
-    private Object[] list;
-    private int DEFAULT_SIZE = 5;
-    public int size;
-
-    public Practice() {
-        list = new Object[DEFAULT_SIZE];
-    }
-
-    public void add(T num) {
-
-        if (size == list.length) {
-            resize();
-        }
-
-        list[size++] = num;
-
-    }
-
-    public T remove() {
-        T rem = ((T) list[--size]);
-        return rem;
-    }
-
-    public void resize() {
-        Object[] arr = new Object[size * 2];
-
-        for (int i = 0; i < list.length; i++) {
-            arr[i] = list[i];
-        }
-
-        list = arr;
-    }
-
-    public String toString() {
-        return Arrays.toString(list);
-    }
-
+public class Practice {
     public static void main(String[] args) {
 
-        Practice<String> ll = new Practice<>();
-        ll.add("Hello");
-        ll.add("I");
-        ll.add("am");
-        ll.add("Jatin");
-        ll.add("Yadav");
+        boolean[][] board = new boolean[5][5];
+        int ans = queen(board, 0);
+        System.out.println(ans);
+    }
 
-        System.out.println(ll);
+    static int queen(boolean[][] board, int row){
         
+        if(row == board.length){
+            display(board);
+            System.out.println();
+            return 1;
+        }
+        int count = 0;
+        
+        for(int i = 0; i < board[0].length; i++){
+
+            if(safe(board, row, i)){
+                board[row][i] = true;
+                count+= queen(board, row+ 1);
+                board[row][i] = false;
+            }
+
+        }
+
+        return count;
+    }
+
+    static boolean safe(boolean[][] board, int row, int col){
+
+        for(int i = 0; i < row; i++){
+            if(board[i][col]){
+                return false;
+            }
+        }
+
+        int left = Math.min(row, col);
+        for(int i = 0; i <= left; i++){
+            if(board[row - i][col - i]){
+                return false;
+            }
+        }
+
+        int right = Math.min(row, board[0].length - col - 1);
+        for(int i = 0; i <= right; i++){
+            if(board[row - i][col + i]){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    static void display(boolean[][] board){
+        for(boolean[] i : board){
+            for(boolean j : i){
+                if(j){
+                    System.out.print("Q ");
+                } else {
+                    System.out.print("X ");
+                }
+            }
+            System.out.println();
+        }
     }
 
 }

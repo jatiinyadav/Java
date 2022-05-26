@@ -73,7 +73,7 @@ public class MergeLinkedList {
         ListNode tail = dummyHead;
 
         while (list1 != null && list2 != null) {
-            if (list1.value < list2.value) {
+            if(list1.value < list2.value){
                 tail.next = list1;
                 list1 = list1.next;
                 tail = tail.next;
@@ -85,7 +85,7 @@ public class MergeLinkedList {
         }
 
         tail.next = (list1 != null) ? list1 : list2;
-        return dummyHead.next;
+        return dummyHead;
     }
 
     public void display() {

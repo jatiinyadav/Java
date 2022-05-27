@@ -2,9 +2,9 @@ package LLinkedList.Leetcode;
 
 public class SortLinkedList {
 
-    public ListNode sortList(ListNode head){
+    public ListNode sortList(ListNode head) {
 
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
 
@@ -47,15 +47,14 @@ public class SortLinkedList {
         return slow;
     }
 
-}
+    class ListNode {
 
-class ListNode {
+        int value;
+        ListNode next;
 
-    int value;
-    ListNode next;
+        public ListNode() {
 
-    public ListNode() {
+        }
 
     }
-
 }

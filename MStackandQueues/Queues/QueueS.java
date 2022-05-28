@@ -1,4 +1,4 @@
-package MStackandQueues;
+package MStackandQueues.Queues;
 
 import java.util.LinkedList;
 import java.util.Queue;

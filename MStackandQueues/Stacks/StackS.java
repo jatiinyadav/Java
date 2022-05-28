@@ -1,4 +1,4 @@
-package MStackandQueues;
+package MStackandQueues.Stacks;
 
 import java.util.Stack;
 

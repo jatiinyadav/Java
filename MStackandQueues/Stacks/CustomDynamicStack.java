@@ -1,4 +1,4 @@
-package MStackandQueues;
+package MStackandQueues.Stacks;
 
 public class CustomDynamicStack extends CustomStack {
 

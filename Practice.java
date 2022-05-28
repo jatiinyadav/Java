@@ -27,6 +27,7 @@ public class Practice {
         }
 
         System.out.println(currentNode.next.value);
+        System.out.println(currentNode.prev.value);
     }
 
 }

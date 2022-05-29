@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class AllSubsets {
     public static void main(String[] args) {
 
-        // ArrayList<String> ans  = subsetsReturn("abc", "");
-        subsets("abc", "");
-        // System.out.println(ans);
+        ArrayList<String> ans  = subsetsReturn("abc", "");
+        // subsets("abc", "");
+        System.out.println(ans);
 
     }
 

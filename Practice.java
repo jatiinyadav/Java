@@ -1,45 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Practice {
     public static void main(String[] args) {
 
-        Node headNode = new Node(1);
-        Node lastNode = headNode;
-
-        int n = 5;
-        int k = 2;
-
-        for (int i = 2; i <= n; i++) {
-            Node temp = new Node(i);
-            temp.prev = lastNode;
-            lastNode.next = temp;
-            lastNode = temp;
-        }
-
-        headNode.prev = lastNode;
-        lastNode.next = headNode;
-
-        Node currentNode = lastNode;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < k; j++) {
-                currentNode = currentNode.next;
-            }
-            currentNode.prev.next = currentNode.next;
-            currentNode.next.prev = currentNode.prev;
-        }
-
-        System.out.println(currentNode.next.value);
-        System.out.println(currentNode.prev.value);
+        String tiles = "AAABBC";
+        ArrayList<String> resp = combination(tiles, "");
+        System.out.println(resp);
+        System.out.println(resp.size() - 1);
     }
 
-}
+    static ArrayList<String> combination(String title, String ans) {
 
-class Node {
-    public Node next;
-    public Node prev;
+        if (title.isEmpty()) {
+            ArrayList<String> res = new ArrayList<>();
+            res.add(ans);
+            return res;
+        }
 
-    final int value;
+        char c = title.charAt(0);
+        ArrayList<String> left = combination(title.substring(1), ans + c);
+        ArrayList<String> right = combination(title.substring(1), ans);
 
-    public Node(int value) {
-        this.value = value;
+        left.addAll(right);
+        return left;
     }
 
 }

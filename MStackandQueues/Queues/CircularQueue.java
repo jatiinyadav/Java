@@ -58,6 +58,10 @@ public class CircularQueue {
         return size == 0;
     }
 
+    public int Front() {
+        return data[(front % data.length)];
+    }
+
     public static void main(String[] args) throws Exception {
         CustomDynamicCircularQueue queue = new CustomDynamicCircularQueue();
 
@@ -70,6 +74,7 @@ public class CircularQueue {
 
         queue.display();
 
+        System.out.println(queue.Front());
     }
 
 }

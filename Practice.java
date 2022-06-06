@@ -1,6 +1,7 @@
-public class Practice {
+class Practice {
     public static void main(String[] args) {
 
-    }
+        int[] nums = {};
 
+    }
 }

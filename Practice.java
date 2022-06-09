@@ -1,38 +1,47 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Stack;
 
 class Practice {
-    public static void main(String[] args) {
 
-        int[] nums = { 7, 9, 7, 4, 2, 8, 7, 7, 1, 5 };
+    static void preOrderTrav(Node root, ArrayList<Integer> ans) {
 
-        int start = 0;
-        int end = nums.length - 1;
-        List<Integer> ans = new ArrayList<>();
-
-        // [4, 3, 2, 7, 8, 2, 3, 1]
-
-        // while (start <= end) {
-        //     int correct = nums[start] - 1;
-
-        //     if (nums[start] != nums[correct]) {
-        //         int temp = nums[start];
-        //         nums[start] = nums[correct];
-        //         nums[correct] = temp;
-        //     } else {
-        //         start++;
-        //     }
-        // }
-
-        Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
-        for (int i = 0; i <= nums.length - 1; i++) {
-            if (nums[i] != i + 1) {
-                System.out.println(nums[i]);
-                break;
-            }
+        if (root == null) {
+            return;
         }
 
+        preOrderTrav(root.left, ans);
+        preOrderTrav(root.right, ans);
+        ans.add(root.data);
+
+    }
+
+    public static void main(String[] args) {
+
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.left.right.left = new Node(8);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
+        root.right.right.left = new Node(9);
+        root.right.right.right = new Node(10);
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        preOrderTrav(root, ans);
+        System.out.println(ans);
+
+    }
+
+}
+
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    public Node(int data) {
+        this.data = data;
     }
 }

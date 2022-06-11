@@ -1,47 +1,53 @@
 import java.util.ArrayList;
-import java.util.Stack;
+import java.util.List;
 
-class Practice {
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-    static void preOrderTrav(Node root, ArrayList<Integer> ans) {
+    TreeNode() {
+    }
 
-        if (root == null) {
-            return;
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+class Solution {
+    public static int levelOrder(TreeNode root, int[] d) {
+
+        if(root == null){
+            return 0;
         }
 
-        preOrderTrav(root.left, ans);
-        preOrderTrav(root.right, ans);
-        ans.add(root.data);
+        int l = levelOrder(root.left, d);
+        int r = levelOrder(root.right, d);
 
+        d[0] = Math.max(d[0], l + r);
+
+        return 1 + Math.max(l, r);
     }
 
     public static void main(String[] args) {
 
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
-        root.left.right.left = new Node(8);
-        root.right.left = new Node(6);
-        root.right.right = new Node(7);
-        root.right.right.left = new Node(9);
-        root.right.right.right = new Node(10);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
 
-        ArrayList<Integer> ans = new ArrayList<>();
-        preOrderTrav(root, ans);
+        int[] d = new int[1];
+
+        int ans = levelOrder(root, d);
         System.out.println(ans);
-
-    }
-
-}
-
-class Node {
-    int data;
-    Node left;
-    Node right;
-
-    public Node(int data) {
-        this.data = data;
     }
 }

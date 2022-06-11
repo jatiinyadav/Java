@@ -39,9 +39,17 @@ public class Main {
         // Left Right Root
 
         // Breadth First Search (BFS)
-
+ 
         // It goes level wise
         // In a horizontal way
 
     }
 }
+
+// Preorder
+// Inorder
+// PostOrder
+// Level Order
+// Maximum Depth
+// Balance BT
+// Diameter BT

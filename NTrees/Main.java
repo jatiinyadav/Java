@@ -53,3 +53,9 @@ public class Main {
 // Maximum Depth
 // Balance BT
 // Diameter BT
+// Maximum Path Sum in BT L17 --x--
+// Same Tree
+// Zig-Zag Level Order Traversal
+// Boundary Level Traversal L20 --x--
+// Vertical Order Traversal L21 --x--
+// Top view of a BT

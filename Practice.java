@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 class TreeNode {
     int val;
@@ -21,18 +24,52 @@ class TreeNode {
 }
 
 class Solution {
-    public static int levelOrder(TreeNode root, int[] d) {
+    public static List<List<Integer>> levelOrder(TreeNode root) {
 
-        if(root == null){
-            return 0;
+        List<List<Integer>> ans = new ArrayList<>();
+
+        Queue<TreeNode> q = new LinkedList<>();
+
+        if (root == null) {
+            return ans;
         }
 
-        int l = levelOrder(root.left, d);
-        int r = levelOrder(root.right, d);
+        q.offer(root);
 
-        d[0] = Math.max(d[0], l + r);
+        int flag = 0;
+        while (!q.isEmpty()) {
+            int level = q.size();
 
-        return 1 + Math.max(l, r);
+            List<Integer> ds = new ArrayList<>();
+
+            for (int i = 0; i < level; i++) {
+
+                root = q.peek();
+
+                if (root.left != null) {
+                    q.offer(root.left);
+                }
+
+                if (root.right != null) {
+                    q.offer(root.right);
+                }
+
+                ds.add(q.poll().val);
+            }
+
+            if (flag == 1) {
+                Collections.reverse(ds);
+                ans.add(ds);
+                flag = 0;
+            } else {
+                ans.add(ds);
+                flag = 1;
+            }
+
+        }
+
+        return ans;
+
     }
 
     public static void main(String[] args) {
@@ -45,9 +82,7 @@ class Solution {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
 
-        int[] d = new int[1];
-
-        int ans = levelOrder(root, d);
+        List<List<Integer>> ans = levelOrder(root);
         System.out.println(ans);
     }
 }

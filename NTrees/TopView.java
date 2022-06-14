@@ -1,40 +1,44 @@
 // package NTrees;
 
 // import java.util.ArrayList;
-// import java.util.List;
-// import java.util.Stack;
+// import java.util.LinkedList;
+// import java.util.Map;
+// import java.util.Queue;
+// import java.util.TreeMap;
 
 // public class TopView {
 
-//     public static List<Integer> levelOrder(TreeNode root) {
+//     public static ArrayList<Integer> levelOrder(TreeNode root) {
 
-//         List<Integer> ans = new ArrayList<>();
-//         Stack<TreeNode> s = new Stack<>();
-//         TreeNode temp = root;
+//         ArrayList<Integer> ans = new ArrayList<>();
+//         if (root == null) {
+//             return ans;
+//         }
 
-//         s.push(temp);
-//         while (!s.empty()) {
-//             if (temp.left != null) {
-//                 s.push(temp.left);
-//                 temp = temp.left;
-//             } else {
-//                 TreeNode t = s.peek();
-//                 s.pop();
-//                 ans.add(t.val);
-//                 while (s.size() > 1 && t == s.peek().left) {
-//                     t = s.peek();
-//                     s.pop();
-//                     ans.add(t.val);
-//                 }
+//         Map<Integer, Integer> map = new TreeMap<>();
+//         Queue<Pair> q = new LinkedList<>();
 
-//                 TreeNode r = s.peek();
-//                 while (r != null) {
-//                     ans.add(r.val);
-//                     r = r.right;
-//                 }
-                
-//                 break;
+//         q.add(new Pair(root, 0));
+//         while (!q.isEmpty()) {
+//             Pair it = q.remove();
+//             int hd = it.hd;
+//             TreeNode temp = it.node;
+
+//             if (map.get(hd) == null) {
+//                 map.put(hd, temp.val);
 //             }
+
+//             if (temp.left != null) {
+//                 q.add(new Pair(temp.left, hd - 1));
+//             }
+
+//             if (temp.right != null) {
+//                 q.add(new Pair(temp.right, hd + 1));
+//             }
+//         }
+
+//         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+//             ans.add(entry.getValue());
 //         }
 
 //         return ans;
@@ -50,7 +54,7 @@
 //         root.right.left = new TreeNode(6);
 //         root.right.right = new TreeNode(7);
 
-//         List<Integer> ans = levelOrder(root);
+//         ArrayList<Integer> ans = levelOrder(root);
 //         System.out.println(ans);
 //     }
 // }
@@ -62,5 +66,15 @@
 
 //     public TreeNode(int val) {
 //         this.val = val;
+//     }
+// }
+
+// class Pair {
+//     int hd;
+//     TreeNode node;
+
+//     public Pair(TreeNode node, int hd) {
+//         this.node = node;
+//         this.hd = hd;
 //     }
 // }

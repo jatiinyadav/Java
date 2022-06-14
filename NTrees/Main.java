@@ -59,3 +59,8 @@ public class Main {
 // Boundary Level Traversal L20 --x--
 // Vertical Order Traversal L21 --x--
 // Top view of a BT
+// Bottom view of BT
+// Left view of BT
+// Right view of BT
+// Symmetric BT
+// Root to Node path BT

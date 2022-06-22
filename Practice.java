@@ -1,19 +1,8 @@
-import java.awt.*;
-
-public class Practice{
+public class Practice {
     public static void main(String[] args) {
 
-        Frame fr = new Frame();
-        fr.setTitle("Hello World");
-        fr.setSize(400, 300);
-        fr.setLayout(new FlowLayout());
-        fr.setVisible(true);
+        System.out.println(1 << (2) - 1);
 
-        Checkbox l1 = new Checkbox("OK");
-        Checkbox l2 = new Checkbox("CANCEL");
-
-        fr.add(l1);
-        fr.add(l2);
     }
 
 }

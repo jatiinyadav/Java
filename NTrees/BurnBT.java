@@ -1,9 +1,7 @@
 // package NTrees;
 
-// public class DistanceK {
+// public class BurnBT {
 //     public static void main(String[] args) {
-        
-        
 
 //     }
 // }
@@ -13,7 +11,7 @@
 //     Node left;
 //     Node right;
 
-//     public Node(int val){
+//     public Node(int val) {
 //         this.val = val;
 //     }
 // }

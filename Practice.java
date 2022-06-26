@@ -1,59 +1,52 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
+public class Practice {
+    public static List<List<Integer>> preOrderTrav(Node root) {
+        List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
+        levelMaker(wrapList, root, 0);
+        return wrapList;
     }
 
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
-class Solution {
-    public static TreeNode buildTree(int[] preorder, int[] inorder) {
-        Map<Integer, Integer> inMap = new HashMap<>();
-
-        for (int i = 0; i < inorder.length; i++) {
-            inMap.put(inorder[i], i);
+    public static void levelMaker(List<List<Integer>> list, Node root, int level) {
+        if (root == null)
+            return;
+        if (level >= list.size()) {
+            list.add(0, new LinkedList<Integer>());
         }
-
-        TreeNode root = tree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1, inMap);
-
-        return root;
-    }
-
-    public static TreeNode tree(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd,
-            Map<Integer, Integer> inMap) {
-        if (preStart > preEnd || inStart > inEnd)
-            return null;
-
-        TreeNode root = new TreeNode(preorder[preStart]);
-
-        int inRoot = inMap.get(root.val);
-        int numsLeft = inRoot - inStart;
-
-        root.left = tree(preorder, preStart + 1, preStart + numsLeft, inorder, inStart, inRoot - 1, inMap);
-        root.right = tree(preorder, preStart + numsLeft + 1, preEnd, inorder, inRoot + 1, inEnd, inMap);
-
-        return root;
+        levelMaker(list, root.left, level + 1);
+        levelMaker(list, root.right, level + 1);
+        list.get(level).add(root.value);
     }
 
     public static void main(String[] args) {
-        int[] preorder = { 3, 9, 20, 15, 7 };
-        int[] inorder = { 9, 3, 15, 20, 7 };
 
-        TreeNode root = buildTree(preorder, inorder);
-        System.out.println(root.val);
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.left.right.left = new Node(10);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
+        root.right.right.left = new Node(8);
+        root.right.right.right = new Node(9);
+
+        List<List<Integer>> ans = preOrderTrav(root);
+        System.out.println(ans);
+
+    }
+
+}
+
+class Node {
+    int value;
+
+    Node left;
+    Node right;
+
+    public Node(int value) {
+        this.value = value;
     }
 }

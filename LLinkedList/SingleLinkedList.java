@@ -14,6 +14,7 @@ public class SingleLinkedList {
     public void insertBeg(int value) {
         Node node = new Node(value);
         node.next = head;
+        
         head = node;
 
         if (tail == null) {

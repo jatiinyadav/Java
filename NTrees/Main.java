@@ -112,3 +112,11 @@ public class Main {
 // https://leetcode.com/problems/search-in-a-binary-search-tree/
 
 // Ceil in Binary Search Tree
+
+// Floor in Binary Search Tree
+
+// Insert a node in BST
+// https://leetcode.com/problems/insert-into-a-binary-search-tree/
+
+// Delete a node in BST
+// 

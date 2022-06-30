@@ -47,6 +47,9 @@ public class Main {
     }
 }
 
+// Inorder of a BST is always Sorted
+// Left Root Right
+
 // Preorder
 // Inorder
 // PostOrder
@@ -108,6 +111,9 @@ public class Main {
 
 
 
+// If a BST is given try to get the Inorder of BST 
+// The inorder of BST is always sorted
+
 // Binary Search Tree
 // https://leetcode.com/problems/search-in-a-binary-search-tree/
 
@@ -119,4 +125,28 @@ public class Main {
 // https://leetcode.com/problems/insert-into-a-binary-search-tree/
 
 // Delete a node in BST
-// 
+// https://leetcode.com/problems/delete-node-in-a-bst
+
+// Kth Smallest Element in BST
+// https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+
+// Validate BST
+// https://leetcode.com/problems/validate-binary-search-tree/
+
+// Lowest Common Ancestor in BST
+// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+
+// Construct BST from Preorder Traversal
+// https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+
+// Inorder Successor in BST
+// https://leetcode.com/problems/inorder-successor-in-bst/
+
+// Design BST Iterator
+// https://leetcode.com/problems/binary-search-tree-iterator/
+
+// Two sum 4
+// https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+
+// Recover BST
+// https://leetcode.com/problems/recover-binary-search-tree/

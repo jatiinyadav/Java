@@ -10,7 +10,7 @@ public class Main {
         // 2. Undirected Cyclic Graph
 
         // Representation of the Graph using ArrayList
-        int n = 3, m = 3;
+        int n = 3;
 
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
         for (int i = 0; i <= n; i++) {
@@ -45,3 +45,9 @@ public class Main {
 // Connected Components of Graph
 
 // BFS in Graph
+
+// DFS in Graph
+
+// Cycle Detection in Undirected Graph using BFS
+
+// Cycle Detection in Undirected Graph using DFS

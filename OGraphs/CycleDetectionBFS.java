@@ -29,7 +29,7 @@ public class CycleDetectionBFS {
 
                 while (!q.isEmpty()) {
                     int node = q.peek().val;
-                    int par = q.peek().prev;
+                    int par = q.peek().prev; 
                     q.remove();
 
                     for (Integer it : adjacentList.get(node)) {

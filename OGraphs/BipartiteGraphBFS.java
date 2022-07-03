@@ -4,50 +4,48 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BFSGraph {
+public class BipartiteGraphBFS {
 
-    public static void bfs(int n, ArrayList<ArrayList<Integer>> adjacentList) {
+    public static boolean check(ArrayList<ArrayList<Integer>> adj, int n) {
 
-        ArrayList<Integer> bfs = new ArrayList<>();
-        boolean[] visited = new boolean[n + 1];
+        int[] visited = new int[13];
+
+        for (int i = 0; i < 13; i++) {
+            visited[i] = -1;
+        }
 
         for (int i = 1; i < n; i++) {
-            if (!visited[i]) {
+            if (visited[i] == -1) {
 
                 Queue<Integer> q = new LinkedList<>();
                 q.add(i);
-                visited[i] = true;
+                visited[i] = 1;
 
                 while (!q.isEmpty()) {
                     int node = q.poll();
-                    bfs.add(node);
 
-                    for (Integer it : adjacentList.get(node)) {
+                    for (Integer it : adj.get(node)) {
 
-                        if (!visited[it]) {
-                            visited[it] = true;
+                        if (visited[it] == -1) {
+                            visited[it] = 1 - visited[node];
                             q.add(it);
-                        }
+                        } else if (visited[it] == visited[node])
+                            return false;
                     }
                 }
 
             }
-
         }
-        System.out.println(bfs);
+
+        return true;
 
     }
 
     public static void main(String[] args) {
-        // Make sure to make adjacent list
-        // Which contains all the nodes that a node is connected to
-
-        // Number of nodes in a graph
-        int n = 12;
 
         ArrayList<ArrayList<Integer>> adjacentList = new ArrayList<>();
 
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i <= 13; i++) {
             adjacentList.add(new ArrayList<>());
         }
 
@@ -68,12 +66,13 @@ public class BFSGraph {
         adjacentList.get(8).add(11);
         adjacentList.get(9).add(10);
         adjacentList.get(9).add(8);
-        adjacentList.get(10).add(5);
-        adjacentList.get(10).add(9);
-        adjacentList.get(11).add(8);
 
-        bfs(n, adjacentList);
+        int n = 12;
+        if (check(adjacentList, n)) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
 
     }
-
 }

@@ -6,7 +6,7 @@ public class Main {
         // Binary Tree
         // 1. It is called binary tree because it cannot contain more than 2 values (0, 1)
         // 2. The first Node is called Root node.
-
+  
         // Types of Binary Trees
 
         // 1. Full Binary Tree

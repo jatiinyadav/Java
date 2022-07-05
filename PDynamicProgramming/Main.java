@@ -1,5 +1,7 @@
 package PDynamicProgramming;
 
+import java.util.Arrays;
+
 public class Main {
     // Recursion : Top to Down Approach
     // We start from the given data and go to the base case
@@ -8,6 +10,32 @@ public class Main {
     // We start from the base case and go to the given data
 
     public static void main(String[] args) {
+
+        int[] x = { 9, 9, 2, 3, 5, 5, 1, 9, 9, 7 };
+        int a = 7;
+
+        int n = x.length - 1;
+
+        Arrays.sort(x);
+
+        int first = x[n];
+
+        int ind = 0;
+
+        while (first == x[n - 1]) {
+            ind++;
+            n--;
+        }
+
+        if (ind == 0) {
+
+            System.out.println(Math.abs(a - x[n]) + Math.abs(a - (x[n - 1])));
+
+        } else {
+
+            System.out.println(Math.abs(a - x[n]) + Math.abs(a - (x[ind])));
+
+        }
 
         // Fibonacci
 
@@ -33,6 +61,10 @@ public class Main {
 
 }
 
+// Tabulation
+// Declare the similar size dp array
+// Whatever the base case is start from it
+
 // Climbing Stairs
 // https://leetcode.com/problems/climbing-stairs/
 
@@ -42,3 +74,5 @@ public class Main {
 // Frog Jump
 // https://leetcode.com/problems/frog-jump/
 
+// Ninja's Training
+// https://www.codingninjas.com/codestudio/problems/ninja-s-training_3621003

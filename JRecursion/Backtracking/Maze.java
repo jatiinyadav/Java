@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Maze {
     public static void main(String[] args) {
-        // int ans = count(3, 3);
-        // System.out.println(ans);
-        ArrayList<String> res = path(3, 3, "");
-        System.out.println(res);
+        int ans = count(3, 3);
+        System.out.println(ans);
+        // ArrayList<String> res = path(3, 3, "");
+        // System.out.println(res);
     }
 
     static int count(int row, int col) {
@@ -30,10 +30,6 @@ public class Maze {
         }
 
         ArrayList<String> res = new ArrayList<>();
-
-        if (row > 1 && column > 1) {
-            res.addAll(path(row - 1, column - 1, ans + 'L'));
-        }
 
         if (row > 1) {
             res.addAll(path(row - 1, column, ans + 'D'));

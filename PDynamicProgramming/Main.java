@@ -11,59 +11,60 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] x = { 9, 9, 2, 3, 5, 5, 1, 9, 9, 7 };
-        int a = 7;
+        int[][] dp = new int[3][3];
 
-        int n = x.length - 1;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
 
-        Arrays.sort(x);
+                if (i == 0 && j == 0)
+                    dp[0][0] = 1;
+                else {
+                    int up = 0;
+                    if (i > 0) {
+                        up = dp[i - 1][j];
+                    }
+                    int left = 0;
+                    if (j > 0) {
+                        left = dp[i][j - 1];
+                    }
+                    dp[i][j] = up + left;
+                }
 
-        int first = x[n];
-
-        int ind = 0;
-
-        while (first == x[n - 1]) {
-            ind++;
-            n--;
+            }
         }
 
-        if (ind == 0) {
-
-            System.out.println(Math.abs(a - x[n]) + Math.abs(a - (x[n - 1])));
-
-        } else {
-
-            System.out.println(Math.abs(a - x[n]) + Math.abs(a - (x[ind])));
-
+        for (int[] arr : dp) {
+            System.out.println(Arrays.toString(arr));
         }
-
-        // Fibonacci
-
-        // 1D Recurrence Relations
-
-        // https://www.codingninjas.com/codestudio/problems/count-ways-to-reach-nth-stairs_798650
-
-        // How to identify DP/Recursion question?
-        // The questions can be:
-        // 1. Count the total number of ways
-        // 2. There are multiple ways to do it find minimum or maximum
-        // 3. Try all possible ways
-        // 4. Best way among all
-
-        // To solve the problem after identification.
-        // 1. Try to represent the given problem in terms of index.
-        // 2. Do all possible operations on that index according to the problem
-        // statement.
-        // 3. To count all possible ways - sum of all stuff.
-        // To find minimum/maximum - Take Minimum/maximum of all stuff.
 
     }
 
+    // Fibonacci
+
+    // 1D Recurrence Relations
+
+    // https://www.codingninjas.com/codestudio/problems/count-ways-to-reach-nth-stairs_798650
+
+    // How to identify DP/Recursion question?
+    // The questions can be:
+    // 1. Count the total number of ways
+    // 2. There are multiple ways to do it find minimum or maximum
+    // 3. Try all possible ways
+    // 4. Best way among all
+
+    // To solve the problem after identification.
+    // 1. Try to represent the given problem in terms of index.
+    // 2. Do all possible operations on that index according to the problem
+    // statement.
+    // 3. To count all possible ways - sum of all stuff.
+    // To find minimum/maximum - Take Minimum/maximum of all stuff.
+
 }
 
-// Tabulation
-// Declare the similar size dp array
-// Whatever the base case is start from it
+// Memoization to Tabulation
+// Start from the base case
+// Express all in for loops
+// Copy the recurrence
 
 // Climbing Stairs
 // https://leetcode.com/problems/climbing-stairs/
@@ -76,3 +77,7 @@ public class Main {
 
 // Ninja's Training
 // https://www.codingninjas.com/codestudio/problems/ninja-s-training_3621003
+
+// Unique Path 1
+// https://www.codingninjas.com/codestudio/problems/total-unique-paths_1081470
+

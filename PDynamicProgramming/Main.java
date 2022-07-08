@@ -1,7 +1,5 @@
 package PDynamicProgramming;
 
-import java.util.Arrays;
-
 public class Main {
     // Recursion : Top to Down Approach
     // We start from the given data and go to the base case
@@ -11,31 +9,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[][] dp = new int[3][3];
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-
-                if (i == 0 && j == 0)
-                    dp[0][0] = 1;
-                else {
-                    int up = 0;
-                    if (i > 0) {
-                        up = dp[i - 1][j];
-                    }
-                    int left = 0;
-                    if (j > 0) {
-                        left = dp[i][j - 1];
-                    }
-                    dp[i][j] = up + left;
-                }
-
+        int i, j, count;
+        count = 0;
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j < 5; j++) {
+                count++;
             }
         }
-
-        for (int[] arr : dp) {
-            System.out.println(Arrays.toString(arr));
-        }
+        System.out.println(count);
 
     }
 
@@ -80,4 +61,3 @@ public class Main {
 
 // Unique Path 1
 // https://www.codingninjas.com/codestudio/problems/total-unique-paths_1081470
-

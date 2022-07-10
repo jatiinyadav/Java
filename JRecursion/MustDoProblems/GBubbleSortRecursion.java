@@ -11,6 +11,8 @@ public class GBubbleSortRecursion {
             bubble(arr, 0);
         }
 
+        System.out.println(18 & 1);
+
         System.out.println(Arrays.toString(arr));
     }
 

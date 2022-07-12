@@ -7,7 +7,11 @@ public class GXOR {
         int ans = 7;
         System.out.println(xor(ans));
 
-        // Calculate xor from range1 to range2 
+        // Calculate xor from range1 to range2
+        int range1 = 3;
+        int range2 = 9;
+
+        System.out.println(xor(range2) ^ xor(range1 - 1));
 
     }
 

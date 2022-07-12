@@ -25,7 +25,7 @@ public class DFSGraph {
         boolean[] visited = new boolean[n + 1];
         for (int i = 1; i <= n; i++) {
             if (!visited[i]) {
-                dfs(1, visited, adj, storeDFS);
+                dfs(i, visited, adj, storeDFS);
             }
         }
 

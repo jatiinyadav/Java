@@ -1,43 +1,41 @@
 package OGraphs;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class CycleDetectionDirectedDFS {
+
+    static boolean cycle(int i, ArrayList<ArrayList<Integer>> adj, int[] visited, int[] dfvisited) {
+
+        visited[i] = 1;
+        dfvisited[i] = 1;
+
+        for (Integer it : adj.get(i)) {
+            if (visited[it] == 0) {
+                if (cycle(it, adj, visited, dfvisited))
+                    return true;
+            } else if (dfvisited[it] == 1)
+                return true;
+        }
+        dfvisited[i] = 0;
+        return false;
+    }
+
     public static void main(String[] args) {
 
-        String str = "the quick brown fox jumps over the lazy dog";
-        String string = str.replaceAll(" ", "");
-        String message = "vkbs bs t suepuv";
+        int n = 10;
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        int[] visited = new int[n + 1];
+        int[] dfsvisited = new int[n + 1];
 
-        ArrayList<Character> list = new ArrayList<>();
-
-        for (int i = 0; i < string.length(); i++) {
-            if (!list.contains(string.charAt(i))) {
-                list.add(string.charAt(i));
+        for (int i = 0; i <= n; i++) {
+            if (visited[i] == 0) {
+                if (cycle(i, adj, visited, dfsvisited)) {
+                    System.out.println("TRUE");
+                    return;
+                }
             }
         }
-
-        String ans = ""; 
-
-        Map<Character, Character> map = new HashMap<>();
-
-        for (int i = 0; i < 26; i++) {
-            map.put(list.get(i), (char) ('a' + i));
-        }
-
-        for (int i = 0; i < message.length(); i++) {
-
-            if (message.charAt(i) == ' ') {
-                ans += " ";
-            } else {
-                char c = map.get(message.charAt(i));
-                ans += c;
-            }
-
-        }
-
-        System.out.println(ans);
+        System.out.println("FALSE");
+        return;
     }
 }

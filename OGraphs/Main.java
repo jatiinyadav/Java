@@ -51,3 +51,11 @@ public class Main {
 // Cycle Detection in Undirected Graph using BFS
 
 // Cycle Detection in Undirected Graph using DFS
+
+// Bipartite Graph DFS
+
+// Bipartite Graph BFS
+
+// Cycle Detection in Directed Graph using DFS
+
+// Topological Sort DFS

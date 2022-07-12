@@ -16,7 +16,7 @@ public class FPascal {
         for (int i = b; i >= 1; i--) {
             ans *= 3;
         }
-        // System.out.println(ans);
+        System.out.println(ans);
 
         // Bit Manipulation
 
@@ -34,7 +34,7 @@ public class FPascal {
 
         }
 
-        // System.out.println(res);
+        System.out.println(res);
 
         // Count the number of set bits in a given number;
         int number = 234;

@@ -36,6 +36,8 @@ public class Main {
     }
 }
 
+// https://leetcode.com/tag/graph/discuss/655708/Graph-For-Beginners-Problems-or-Pattern-or-Sample-Solutions
+
 // A Graph can have multiple components (Known as Disconnected Graph)
 
 // Types of Graphs
@@ -59,3 +61,15 @@ public class Main {
 // Cycle Detection in Directed Graph using DFS
 
 // Topological Sort DFS
+
+// Topological Sort BFS (Kahn's Algorithm)
+
+// Cycle Detection in Directed Graph using BFS (Kahn's Algorithm)
+
+// Shortest Path in Undirected Graph with Unit Weights
+
+// Dijkstra's Algorithm
+
+// Minimum Spanning Tree
+
+// Prim's Algorithm

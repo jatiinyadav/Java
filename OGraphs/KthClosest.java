@@ -11,6 +11,14 @@ public class KthClosest {
         Map<Integer, Integer> mp = new HashMap<>();
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
+
+            if (mp.get(arr[i]) == null) {
+                mp.put(1, arr[i]);
+            } else {
+                mp.put(mp.get(arr[i]) + 1, arr[i]);
+
+            }
+
             mp.put(arr[i], count + 1);
         }
 

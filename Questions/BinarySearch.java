@@ -103,6 +103,6 @@ public class BinarySearch {
 // Find max element in Bitonic Array
 // Bitonic:-> Monotonically Strictly increasing and Monotonically Strictly
 
-
 // Search an element in Bitonic Array
-// 
+
+// Search in Row Wise and Column Wise Sorted Array

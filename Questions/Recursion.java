@@ -3,7 +3,7 @@ package Questions;
 import java.util.ArrayList;
 import java.util.List;
 
-// abc all subsequence
+// ABC all Subsequence
 
 // Height of Binary Tree
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 // Sort a Stack using Recursion
 
-// Delete middle element in stack Using recursion
+// Delete Middle element in stack Using recursion
 
 // Reverse a stack using recursion
 
@@ -19,6 +19,31 @@ import java.util.List;
 // https://leetcode.com/problems/k-th-symbol-in-grammar/
 
 // Tower of Hanoi
+
+// Print Subsets ("abc")
+
+// Print Unique Subsets (Map)
+
+// Permutation with Spaces
+
+// Permutation with case change
+
+// Letter case permutation
+// https://leetcode.com/problems/letter-case-permutation/
+
+// Generate all balanced paranthesis
+// https://practice.geeksforgeeks.org/problems/generate-all-possible-parentheses/1
+
+// NOTE:
+// Subsequence != Subset
+// Power set is all subsets of a set
+// Substring are need to continuous
+// Ex: "abc" Substrings are : a, b, c, ab, bc, abc |||| ac cannot be a substring
+// But ac can be subsequence and order matters in subsequence
+// ac is a subsequence but ca is not a subsequence in "abc"
+// Whereas subset can be both ac & ca in "abc"
+
+// All substring are subsequence, All subsequence are subset
 
 public class Recursion {
 

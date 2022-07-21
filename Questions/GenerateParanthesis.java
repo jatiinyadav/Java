@@ -15,7 +15,7 @@ public class GenerateParanthesis {
         if (open > 0) {
             para("(", ans + "(", res, open - 1, close);
         }
-
+ 
         if (close > open) {
             para(")", ans += ")", res, open, close - 1);
         }
@@ -23,8 +23,6 @@ public class GenerateParanthesis {
     }
 
     public static void main(String[] args) {
-
-        int N = 3;
 
         List<String> ans = new ArrayList<>();
 

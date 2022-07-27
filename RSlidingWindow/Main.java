@@ -55,3 +55,18 @@ public class Main {
 
 // Negative Integer in every window of size k
 // https://practice.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
+
+// Count occurences of anagrams
+// https://leetcode.com/problems/find-all-anagrams-in-a-string/
+
+// Maximum of all subarrays of size k
+// 
+
+// Longest Substring With K Unique Characters
+// https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1
+
+// Longest Substring Without Repeating Character
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+// Minimum Window Substring
+// https://leetcode.com/problems/minimum-window-substring/ 

@@ -23,6 +23,8 @@ public class MinimumSlidingWindow {
 
         int count = mp.size();
 
+        int maxLen = Integer.MAX_VALUE;
+
         int maxStart = Integer.MIN_VALUE;
         int maxEnd = Integer.MIN_VALUE;
 
@@ -40,7 +42,9 @@ public class MinimumSlidingWindow {
             } else if (count == 0) {
                 while (count == 0) {
 
-                    if (count == 0) {
+                    if (maxLen > j - i + 1) {
+
+                        maxLen = j - i + 1;
                         maxStart = i;
                         maxEnd = j;
 

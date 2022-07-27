@@ -61,10 +61,11 @@ public class MinimumSlidingWindow {
         }
 
         if (maxStart >= 0) {
-
             for (int q = maxStart; q <= maxEnd; q++) {
                 ans += s.charAt(q);
             }
+        } else {
+            return "";
         }
 
         return ans;

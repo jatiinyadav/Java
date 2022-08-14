@@ -1,12 +1,9 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Practice {
     public static void main(String[] args) {
 
         int[][] matrix = { { 1, 10, 4, 2 }, { 9, 3, 8, 7 }, { 15, 16, 17, 12 } };
-        List<Integer> ls = new ArrayList<>();
 
         int[] col = new int[matrix[0].length];
         int[] row = new int[matrix.length];
@@ -32,11 +29,6 @@ public class Practice {
             }
             row[ind1++] = min;
             col[ind2++] = max;
-        }
-
-        int ro = 0;
-        for (int i = 0; i < matrix[0].length; i++) {
-            
         }
 
     }

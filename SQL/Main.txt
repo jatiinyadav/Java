@@ -1,5 +1,0 @@
-1. SELECT
-
-SELECT * FROM table_name
-SELECT DISTINCT column_name FROM table_name
-

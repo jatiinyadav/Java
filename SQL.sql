@@ -4,7 +4,7 @@ SELECT * FROM Names;
 INSERT INTO Names VALUES ('Shobha', 'Chaudhary', 18, 'shobha@gmail.com','BTECH', 98766789, 'Miss');
 
 /* UPDATE */
-UPDATE Names SET FirstName = 'Bhoomi' WHERE Email = 'radha@gmail.com';
+UPDATE Names SET FirstName = 'Bhumi' WHERE Email = 'bhoomi@gmail.com';
 
 /* ALTER */
 ALTER TABLE Names ADD AddressDetails VARCHAR(40);

@@ -17,7 +17,7 @@ class HelloWorld {
       // * * * *
       // * * * *
         for (int i = 0; i < 4; i++){
-            for(int j = 0; j <= 4; j++){
+            for(int j = 0; j < 4; j++){
                 System.out.print("* ");
             }
             System.out.println();
@@ -88,6 +88,28 @@ class HelloWorld {
             }
             
             l--;
+            System.out.println();
+        }
+
+	// 1 
+	// 0 1 
+	// 1 0 1 
+	// 0 1 0 1 
+	// 1 0 1 0 1    
+	int start = 1;
+	for (int i = 0; i < 5; i++){
+		if(i % 2 == 0) start = 1;
+		else start = 0;
+            	for(int j = 0; j <= i; j++){
+                	if(start == 0){
+                    	System.out.print(0 + " ");
+                    	start = 1;
+                	} 
+			else {
+                    		System.out.print(1 + " ");
+                    		start = 0;
+			}
+            }
             System.out.println();
         }
     }

@@ -112,5 +112,20 @@ class HelloWorld {
             }
             System.out.println();
         }
+	
+        // *****
+        //  ***
+        //   *
+	int space = 0;
+        for(int i = 0; i <=5; i++){
+            for (int k = 0; k < space; k++){
+                System.out.print(" ");
+            }
+            for(int j = i; j <= 5 * 2 - i; j++){
+                System.out.print("*");
+            }
+            space++;
+            System.out.println();
+        }
     }
 }

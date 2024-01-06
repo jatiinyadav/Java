@@ -127,5 +127,9 @@ class HelloWorld {
             space++;
             System.out.println();
         }
+
+	// 1         1
+	// 1 2     2 1
+	// 1 2 3 3 2 1
     }
 }

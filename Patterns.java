@@ -149,5 +149,45 @@ class HelloWorld {
 		    spaces = spaces - 2;
 		    System.out.println();
 		}
+	// * * * * * * 
+	// * *     * * 
+	// *         * 
+	// *         * 
+	// * *     * * 
+	// * * * * * * 
+	    	int spaces = 0;
+		for(int i = 0; i < n; i++){
+		    for(int j = 0; j < n - i; j++){
+		        System.out.print("* ");
+		    }
+		    
+		    for(int k = 0; k < spaces; k++){
+		        System.out.print(' ');
+		    }
+		    
+		    for(int z = n - i; z > 0; z--){
+		        System.out.print("* ");
+		    }
+		    spaces = spaces + 2;
+		    
+		    System.out.println();
+		}
+		spaces = n * 2 - 2;
+		for(int i = 0; i < n; i++){
+		    for(int j = 0; j <= i; j++){
+		        System.out.print("* ");
+		    }
+		    
+		    for(int k = 0; k < spaces; k++){
+		        System.out.print(' ');
+		    }
+		    
+		    for(int z = i; z >= 0; z--){
+		        System.out.print("* ");
+		    }
+		    spaces = spaces - 2;
+		    
+		    System.out.println();
+		}
     }
 }

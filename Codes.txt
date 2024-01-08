@@ -1,0 +1,5 @@
+1. Basic Maths
+  a.  Count Digit:- https://www.codingninjas.com/studio/problems/number-of-digits_9173
+  b.  Reverse a number:- https://www.codingninjas.com/studio/problems/reverse-of-a-number_624652
+  c.  Palindrone:- https://www.codingninjas.com/studio/problems/palindrome-number_624662
+  d.  Armstrong:- https://www.codingninjas.com/studio/problems/check-armstrong_589

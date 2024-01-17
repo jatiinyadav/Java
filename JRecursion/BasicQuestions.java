@@ -40,3 +40,38 @@ public class Main
         printName(--l);
     }
 }
+
+// Sum of 1st N Numbers 
+// Parameterised
+public class Main
+{
+    static int ans = 0;
+	public static void main(String[] args) {
+		int n = 5;
+		cal_sum(ans, n);
+	}
+	
+	static void cal_sum(int ans, int num){
+	    if(num == 0) {
+	        System.out.println(ans);
+	        return;
+	    }
+	    cal_sum(ans+=num, --num);
+	}
+}
+
+// Functional
+public class Main
+{
+    static int ans = 0;
+	public static void main(String[] args) {
+	    System.out.println(cal_sum(5));
+	}
+	
+	static int cal_sum(int num){
+	    if(num == 0) return ans;
+	    return ans = num + cal_sum(--num);
+	}
+}
+
+

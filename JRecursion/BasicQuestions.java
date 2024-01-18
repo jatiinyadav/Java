@@ -74,4 +74,25 @@ public class Main
 	}
 }
 
+// Reverse Array using Recursion
+import java.util.Arrays; 
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] arr = {1,2,3,4,5};
+	    swap(arr, 0, arr.length - 1);
+	    System.out.println(Arrays.toString(arr));
+	}
+	
+	static void swap(int[] arr, int left, int right){
+	    if(left > right){
+	       return;
+	    }
+	    int temp = arr[left];
+	    arr[left] = arr[right];
+	    arr[right] = temp;
+	    swap(arr, ++left, --right);
+	}
+}
 

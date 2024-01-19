@@ -96,3 +96,25 @@ public class Main
 	}
 }
 
+// Check Palindrone
+public class Main
+{
+	public static void main(String[] args) {
+		String name = "madam";
+		System.out.println(palindrone(name, 0));
+	}
+	
+	static boolean palindrone(String name, int i){
+	    
+	    if(i > name.length() - i - 1){
+	        return true;
+	    }
+	    
+	    if(name.charAt(i) != name.charAt(name.length() - i - 1)){
+	       return false;
+	    }
+	    
+	    return palindrone(name, ++i);
+	    
+	}
+}

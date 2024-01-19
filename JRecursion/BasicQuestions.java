@@ -118,3 +118,20 @@ public class Main
 	    
 	}
 }
+
+// Print nth Fibonacci
+public class Main
+{
+	public static void main(String[] args) {
+	    System.out.print(fibonacci(8));
+	}
+	
+	static int fibonacci(int num){
+	    if(num <= 1) return num;
+	    int last = fibonacci(num - 1);
+	    int slast = fibonacci(num - 2); 
+	    
+	    return last + slast;
+	}
+}
+
